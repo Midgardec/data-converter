@@ -5,5 +5,5 @@
 #include "Sink.h"
 
 void Sink::write(const std::string& data) {
-    std::cout << data;
+    std::cout << data; // Вывод данных в стандартный поток вывода
 }

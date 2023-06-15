@@ -4,7 +4,7 @@
 
 int main() {
     // Create a source and sink object
-    std::vector<uint8_t> byteData = {0b11010101};
+    std::vector<uint8_t> byteData = {0b10011010, 0b10111111};
     ISource* source = new Source(byteData);
     ISink* sink = new Sink();
 

@@ -12,15 +12,16 @@
 class DataConverter {
 public:
     DataConverter(ISource* source, ISink* sink);
+    // Конструктор класса DataConverter, принимающий указатели на источник и приемник
 
-    void start();
-    void stop();
+    void start();// Запускает процесс конвертации данных
+    void stop(); // Останавливает процесс конвертации данных
 
 private:
-    ISource* source_;
-    ISink* sink_;
-    std::atomic<bool> running_;
-    std::thread thread_;
+    ISource* source_;// Указатель на источник данных
+    ISink* sink_;// Указатель на приемник данных
+    std::atomic<bool> running_;// Атомарная переменная для отслеживания состояния работы процесса конвертации
+    std::thread thread_;// Поток, в котором выполняется процесс конвертации
 
-    void run();
+    void run();// Вспомогательная функция, выполняющая фактическую конвертацию данных
 };

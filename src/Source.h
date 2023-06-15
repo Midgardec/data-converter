@@ -4,16 +4,16 @@
 
 #pragma once
 
-#include "ISource.h"
+#include "ISource.h" // интерфейс ISource
 #include <vector>
 class Source : public ISource {
 public:
     Source(std::vector<uint8_t> data);
 
-    bool hasData() const override;
-    uint8_t readByte() override;
+    bool hasData() const override; // Реализация функции hasData()
+    uint8_t readByte() override; // Реализация функции readByte()
 
 private:
-    std::vector<uint8_t> data_;
-    std::size_t index_;
+    std::vector<uint8_t> data_; // Приватное поле класса, которое хранит вектор данных.
+    std::size_t index_; // Приватное поле класса, которое хранит текущий индекс чтения данных.
 };

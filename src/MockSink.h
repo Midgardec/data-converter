@@ -10,4 +10,6 @@
 class MockSink : public ISink {
 public:
     MOCK_METHOD1(write, void(const std::string&));
+    // Мок-объект класса Sink, реализующий интерфейс ISink.
+    // Имеет мок-метод write, принимающий строку данных
 };

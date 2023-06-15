@@ -8,5 +8,5 @@
 
 class ISink {
 public:
-    virtual void write(const std::string& data) = 0;
+    virtual void write(const std::string& data) = 0; // Чисто виртуальная функция для записи данных в sink
 };
