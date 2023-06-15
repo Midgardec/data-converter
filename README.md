@@ -9,7 +9,7 @@ The Data Converter project is a simple application that converts data from a sou
     - Type 0: Unsigned integer conversion.
     - Type 1: Signed integer conversion.
     - Type 2: Character conversion.
-- Invalid types are handled and reported as "Invalid type" in the output.
+- Invalid types are handled and reported as "Invalid type" and "Invalid Data" in the output.
 
 ### Getting Started
 
