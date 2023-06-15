@@ -4,7 +4,8 @@
 
 #include "DataConverter.h"
 #include <iostream>
-DataConverter::DataConverter(ISource* source, ISink* sink) : source_(source), sink_(sink), running_(false) {}
+
+DataConverter::DataConverter(ISource *source, ISink *sink) : source_(source), sink_(sink), running_(false) {}
 
 void DataConverter::start() {
     if (!running_.exchange(true)) {
@@ -39,7 +40,13 @@ void DataConverter::run() {
                 convertedData = std::to_string(static_cast<int8_t>(data));
                 break;
             case 0b10:
-                convertedData = static_cast<char>('a' + data);
+                if (data < 26) {
+                    convertedData = static_cast<char>('a' + data);
+                } else if (data < 52) {
+                    convertedData = static_cast<char>('A' + data - 26);
+                } else {
+                    convertedData = "Invalid data";
+                }
                 break;
             default:
                 convertedData = "Invalid type";
