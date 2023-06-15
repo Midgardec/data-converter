@@ -24,14 +24,17 @@ To use the Data Converter, follow these steps:
 
 ### Example Usage
 
-Here's an example of how to use the Data Converter:
+Here's an example of how to use the Data Converter (sink outputs to console):
 
 ```cpp
+#include "Source.h"
+#include "Sink.h"
 #include "DataConverter.h"
 
 int main() {
     // Create a source and sink object
-    ISource* source = new Source();
+    std::vector<uint8_t> byteData = {0b11010101};
+    ISource* source = new Source(byteData);
     ISink* sink = new Sink();
 
     // Create a Data Converter instance
@@ -41,14 +44,10 @@ int main() {
     converter.start();
 
     // Wait for some time
-    // ...
+    std::this_thread::sleep_for(std::chrono::seconds(5));
 
     // Stop the conversion process
     converter.stop();
-
-    // Clean up
-    delete source;
-    delete sink;
 
     return 0;
 }
@@ -70,7 +69,3 @@ To run tests you can use:
 ### Contributing
 
 Contributions to the Data Converter project are welcome. If you find any issues or have suggestions for improvements, please create a GitHub issue or submit a pull request.
-
-### License
-
-The Data Converter project is licensed under the [MIT License](LICENSE).

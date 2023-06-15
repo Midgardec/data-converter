@@ -4,7 +4,7 @@
 
 #include "Source.h"
 
-Source::Source(const std::string& data) : data_(data), index_(0) {}
+Source::Source(std::vector<uint8_t> data) : data_(data), index_(0) {}
 
 bool Source::hasData() const {
     return index_ < data_.size();
