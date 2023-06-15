@@ -20,7 +20,7 @@ To use the Data Converter, follow these steps:
 3. Include the necessary header files and link against the Data Converter library in your project.
 4. Create an instance of the `DataConverter` class, providing the appropriate source and sink objects.
 5. Call the `start` method to start the conversion process.
-6. Optionally, you can pause or stop the conversion process by calling the `pause` or `stop` methods, respectively.
+6. Optionally, you can pause or stop the conversion process by calling the `stop` methods, respectively.
 
 ### Example Usage
 
